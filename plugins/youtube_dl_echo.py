@@ -25,8 +25,6 @@ from translation import Translation
 
 import pyrogram
 logging.getLogger("pyrogram").setLevel(logging.WARNING)
-
-from helper_funcs.chat_base import TRChatBase
 from helper_funcs.display_progress import humanbytes
 from helper_funcs.help_uploadbot import DownLoadFile
 
@@ -40,7 +38,6 @@ async def echo(bot, update):
           text=Translation.BANNED_USER_TEXT
         )
         return
-    TRChatBase(update.from_user.id, update.text, "/echo")
     logger.info(update.from_user)
     url = update.text
     youtube_dl_username = None
